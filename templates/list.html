@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasklar Ro‘yxati</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <div class="max-w-4xl mx-auto py-10">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">📋 Tasklar Ro‘yxati</h1>
+            <a href="{% url 'task_create' %}" 
+                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition">
+                + Yangi Task
+            </a>
+        </div>
+
+        {% if tasks %}
+            <ul class="bg-white shadow-md rounded-lg divide-y divide-gray-200">
+                {% for task in tasks %}
+                    <li class="flex justify-between items-start p-4 hover:bg-gray-50 transition">
+                        <div>
+                            <p class="text-lg font-semibold text-gray-800">
+                                {{ task.id }}. {{ task.name }}
+                            </p>
+                            <p class="text-sm text-gray-600 mt-1">
+                                {{ task.description|default:"(Tavsif yo‘q)" }}
+                            </p>
+                            <span class="inline-block mt-2 text-xs px-2 py-1 rounded bg-gray-200 text-gray-700">
+                                Muhimlik: {{ task.get_priority_display }}
+                            </span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="#" 
+                                class="text-blue-600 hover:underline text-sm">Tahrirlash</a>
+                            <a href="#" 
+                                class="text-red-600 hover:underline text-sm">O‘chirish</a>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-gray-600 text-center mt-8">
+                Hozircha hech qanday task yo‘q 😔
+            </p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
