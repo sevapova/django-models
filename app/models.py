@@ -20,3 +20,18 @@ class Task(models.Model):
 
     def __str__(self):
         return f'Task(id={self.id}, name="{self.name}")'
+
+
+class User(models.Model):
+    first_name = models.CharField(max_length=128)
+    last_name = models.CharField(max_length=128, default='', blank=True)
+    age = models.PositiveSmallIntegerField()
+    tg_id = models.BigIntegerField()
+
+    @property
+    def full_name(self) -> str:
+        return f"{self.first_name} {self.last_name}"
+
+    def __str__(self):
+        return f'user(id={self.id}, name="{self.full_name}")'
+    
