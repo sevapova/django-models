@@ -89,3 +89,4 @@ def get_user_by_id(request: HttpRequest, pk: int) -> JsonResponse:
         'age': user.age,
         'tg_id': user.tg_id
     })
+

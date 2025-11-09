@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yangi Task Qo‘shish</title>
+    <title>Yangi Task Qo'shish</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 flex justify-center items-center min-h-screen">
 
     <div class="bg-white shadow-lg rounded-2xl p-8 w-full max-w-lg">
         <h1 class="text-2xl font-semibold text-gray-800 mb-6 text-center">
-            📝 Yangi Task Qo‘shish
+            📝 Yangi Task Qo'shish
         </h1>
 
         <form method="POST" action="" class="space-y-5">
@@ -19,9 +21,9 @@
             <!-- Task nomi -->
             <div>
                 <label for="name" class="block text-gray-700 font-medium mb-1">Task nomi</label>
-                <input type="text" id="name" name="name" 
-                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
-                    placeholder="Masalan: Djangoni o‘rganish" required>
+                <input type="text" id="name" name="name"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    placeholder="Masalan: Djangoni o'rganish" required>
             </div>
 
             <!-- Tavsif -->
@@ -39,7 +41,7 @@
                     class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none">
                     <option value="1">Muxum</option>
                     <option value="2">Sal Muxum</option>
-                    <option value="3">Qilmasa ham bo‘ladi</option>
+                    <option value="3">Qilmasa ham bo'ladi</option>
                     <option value="4" selected>Asosiy</option>
                 </select>
             </div>
@@ -50,8 +52,8 @@
                     class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md transition">
                     Saqlash
                 </button>
-                <a href="{% url "task_list" %}"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md transition">
+                <a href="{% url " task_list" %}"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg shadow-md transition">
                     LIST
                 </a>
             </div>
@@ -59,5 +61,5 @@
     </div>
 
 </body>
-</html>
 
+</html>

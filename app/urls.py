@@ -11,3 +11,4 @@ urlpatterns = [
     path('users/<slug:slug>', get_user, name='get_user'),
     path('users/', create_user, name='create_user'),
 ]
+

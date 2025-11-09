@@ -31,3 +31,4 @@
     admin.site.register(Task)
     ```
 10. admin panel uchun super user yaratidik: `python manage.py createsuperuser`
+
